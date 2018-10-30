@@ -1,0 +1,33 @@
+.Languages {
+  position: relative;
+}
+
+.Languages__selected {
+  display: inline-block;
+}
+
+.Languages__dropdown {
+  background: var(--bg-color);
+  display: none;
+  padding: 0 0.5em;
+  position: absolute;
+}
+.Languages__dropdown--is-open {
+  display: block;
+}
+
+.Languages__toggle-btn,
+.Languages__dropdown-btn {
+  background: transparent;
+  border: none;
+  font: inherit;
+  padding: 0;
+}
+.Languages__toggle-btn:focus,
+.Languages__dropdown-btn:focus {
+  outline: none;
+}
+
+.Languages__toggle-btn {
+  color: white;
+}
