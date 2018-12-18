@@ -3,46 +3,40 @@ import Languages from './Languages';
 import api from '../api';
 import './App.css';
 
-const documentCache = {};
+const pages = ['home', 'about', 'contact'];
 
 class App extends Component {
   state = {
     languages: [],
-    document: null
+    document: {},
+    currentPage: pages[0]
   };
 
   componentDidMount() {
-    api.getLanguages()
-      .then((languages) =>{
-        this.setState({ languages })
-        this.setLanguage(languages[0]);
-      });
-    this.fetchPage('home');
+    api.getLanguages().then((languages) => {
+      this.setState({ languages });
+      this.setLanguage(languages[0]);
+    });
+    this.fetchPage(this.state.currentPage);
   }
 
   setLanguage = (nextLanguage) => {
-    const { selectedLanguage, document } = this.state;
-    if (nextLanguage !== selectedLanguage) {
-      const page = document && document.alternate_languages.find(({ lang }) => nextLanguage === lang);
-      page && this.fetchPage(page.uid);
-    }
+    const { selectedLanguage } = this.state;
+    if (nextLanguage === selectedLanguage) return;
+
+    this.fetchPage(this.state.currentPage, nextLanguage);
     this.setState({ selectedLanguage: nextLanguage });
   };
 
-  fetchPage = (uid) => {
-    if (documentCache[uid]) {
-      this.setState({ document: documentCache[uid] })
-    } else {
-      api.getPage(uid)
-        .then((document) => {
-          documentCache[document.uid] = document;
-          this.setState({ document });
-        });
-    }
+  fetchPage = (uid, locale) => {
+    api.getPageByUID(uid, locale).then((document) => {
+      this.setState({ document: document.data });
+    });
   };
 
   render() {
     const { languages, selectedLanguage, document } = this.state;
+    const { meta_title, meta_description, slug } = document;
 
     return (
       <div className="App">
@@ -54,19 +48,20 @@ class App extends Component {
           />
         </header>
         <main className="App-content">
-          {document &&
+          {document && (
             <>
-              <h1>{document.data.title[0].text}</h1>
-              {document.data.description.map(({ text }, idx) =>
-                <p key={idx}>{text}</p>)
-              }
-              <img
-                src={document.data.image.url}
-                alt={document.data.image.alt}
-                style={{ maxWidth: '35vw' }}
-              />
+              <h1>{meta_title}</h1>
+              <p>{`${selectedLanguage}/${slug}`}</p>
+              <p>{meta_description}</p>
+              {document.image && (
+                <img
+                  src={document.image.url}
+                  alt={document.image.alt}
+                  style={{ maxWidth: '35vw' }}
+                />
+              )}
             </>
-          }
+          )}
         </main>
       </div>
     );
