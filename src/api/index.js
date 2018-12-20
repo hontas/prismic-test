@@ -14,9 +14,10 @@ function getByUID(name, type = 'page', locale = defaultLocale) {
       api.query(prismic.Predicates.at(`my.${type}.uid`, name), { lang: locale })
     )
     .then((document) => {
-      console.log(cacheId, document.results[0]);
-      cache.set(cacheId, document.results[0]);
-      return document.results[0];
+      const doc = document.results[0];
+      console.log(cacheId, doc);
+      cache.set(cacheId, doc);
+      return doc;
     });
 }
 
@@ -28,9 +29,10 @@ function getBySlug(slug, locale = defaultLocale) {
       api.query(prismic.Predicates.at(`my.page.slug`, slug), { lang: locale })
     )
     .then((document) => {
-      console.log(cacheId, document.results[0]);
-      cache.set(cacheId, document.results[0]);
-      return document.results[0];
+      const doc = document.results[0];
+      console.log(cacheId, doc);
+      cache.set(cacheId, doc);
+      return doc;
     });
 }
 
