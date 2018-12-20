@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './components/App';
+import { PrismicProvider } from './context/PrismicContext';
 import * as serviceWorker from './serviceWorker';
 
 import './index.css';
 
 ReactDOM.render(
   <Router>
-    <App />
+    <PrismicProvider>
+      <App />
+    </PrismicProvider>
   </Router>,
   document.getElementById('root')
 );

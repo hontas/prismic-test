@@ -1,0 +1,15 @@
+.Router__navList {
+  list-style-type: none;
+  display: flex;
+}
+
+.Router__navList__link {
+  color: inherit;
+  display: block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+.Router__navList__link:hover {
+  text-decoration: underline;
+}

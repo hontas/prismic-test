@@ -1,34 +1,38 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import Home from '../pages/home';
-import About from '../pages/about';
-import Contact from '../pages/contact';
+import LandingPage from '../pages/LandingPage';
+// import About from '../pages/about';
+// import Contact from '../pages/contact';
+
+import './Router.css';
 
 export const routes = [
   {
     path: '/',
-    comp: Home,
+    comp: LandingPage,
     exact: true,
     text: 'Hem'
   },
   {
     path: '/about/',
-    comp: About,
+    comp: LandingPage,
     text: 'Om'
   },
   {
     path: '/contact/',
-    comp: Contact,
+    comp: LandingPage,
     text: 'Kontakt'
   }
 ];
 
 export const Nav = () => (
   <nav>
-    <ul>
+    <ul className="Router__navList">
       {routes.map(({ path, text }) => (
-        <li>
-          <Link to={path}>{text}</Link>
+        <li key={path}>
+          <Link to={path} className="Router__navList__link">
+            {text}
+          </Link>
         </li>
       ))}
     </ul>
@@ -36,9 +40,10 @@ export const Nav = () => (
 );
 
 export const Routes = () => (
-  <div>
-    <Route path="/" exact component={Home} />
-    <Route path="/about/" component={About} />
-    <Route path="/contact/" component={Contact} />
-  </div>
+  <>
+    {routes.map(({ path, comp, exact }) => (
+      <Route path={path} exact component={comp} key={path} />
+    ))}
+    <Route path="*" component={() => <h1>404</h1>} key="404" />
+  </>
 );
