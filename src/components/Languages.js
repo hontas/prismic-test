@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import PrismicContext from '../context/PrismicContext';
-import './Languages.css';
+import DropDown from './DropDown';
 
 const flags = {
   'en-us': '🇺🇸',
@@ -8,34 +8,19 @@ const flags = {
   no: '🇳🇴'
 };
 
-function Languages() {
-  const [open, setOpen] = useState(false);
+function Languages({ className = '' }) {
   const { languages, locale, setLocale } = useContext(PrismicContext);
-  const otherLanguages = languages.filter((lang) => lang !== locale);
+  const otherLanguages = languages
+    .filter((lang) => lang !== locale)
+    .map((loc) => ({ id: loc, label: flags[loc] }));
 
   return (
-    <div className="Languages">
-      <div className="Languages__selected">{flags[locale]}</div>
-      <button className="Languages__toggle-btn" onClick={() => setOpen(!open)}>
-        ▼
-      </button>
-      <div
-        className={`Languages__dropdown ${open &&
-          'Languages__dropdown--is-open'}`}
-      >
-        {otherLanguages.map((lang) => (
-          <button
-            key={lang}
-            className="Languages__dropdown-btn"
-            onClick={() => {
-              setLocale(lang);
-              setOpen(false);
-            }}
-          >
-            {flags[lang]}
-          </button>
-        ))}
-      </div>
+    <div className={`Languages ${className}`}>
+      <DropDown
+        list={otherLanguages}
+        selected={flags[locale]}
+        onSelect={setLocale}
+      />
     </div>
   );
 }

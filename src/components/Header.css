@@ -1,0 +1,12 @@
+.Header {
+  background-color: var(--bg-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 50px;
+}
+
+.Header__refs {
+  margin-left: auto;
+}

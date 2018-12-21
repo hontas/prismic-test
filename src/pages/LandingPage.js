@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PrismicContext from '../context/PrismicContext';
 
 export default ({ match }) => {
@@ -30,6 +31,16 @@ export default ({ match }) => {
             style={{ maxWidth: '35vw' }}
           />
         )}
+        <h3>Dynamiska sidor</h3>
+        Publicerad:
+        <Link to="kampanj/loans-with-market-leading-interest">
+          kampanj/loans-with-market-leading-interest
+        </Link>
+        <br />
+        EJ publicerad:
+        <Link to="kampanj/lan-med-marknadsledande-ranta">
+          kampanj/lan-med-marknadsledande-ranta
+        </Link>
       </>
     </main>
   );

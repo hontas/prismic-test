@@ -1,15 +1,12 @@
 import React from 'react';
-import Languages from './Languages';
 import * as Router from './Router';
+import Header from './Header';
 import './App.css';
 
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <Router.Nav />
-        <Languages />
-      </header>
+      <Header />
       <main className="App-content">
         <Router.Routes />
       </main>

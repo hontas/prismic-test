@@ -1,0 +1,35 @@
+.DynamicLandingPage {
+  max-width: 1024px;
+  margin: auto;
+  text-align: left;
+}
+
+.DynamicLandingPage__meta {
+  background: whitesmoke;
+  font-size: smaller;
+  padding: 0.5em;
+  margin: 1em 0;
+}
+
+.DynamicLandingPage__meta dl {
+  margin: 0;
+}
+
+.DynamicLandingPage__meta dt {
+  display: inline-block;
+  min-width: 120px;
+  margin-right: 0.5em;
+}
+.DynamicLandingPage__meta dt:after {
+  content: ': ';
+}
+
+.DynamicLandingPage__meta dd {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+.DynamicLandingPage__image {
+  max-height: 300px;
+}

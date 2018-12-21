@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
 
+import NotFound from './404';
 import PrismicContext from '../context/PrismicContext';
 import LandingPage from '../pages/LandingPage';
-// import About from '../pages/about';
-// import Contact from '../pages/contact';
+import DynamicLandingPage from '../pages/DynamicLandingPage';
 
 import './Router.css';
 
@@ -63,6 +63,7 @@ export const Routes = () => (
     {routes.map(({ path, comp, exact }) => (
       <Route path={path} exact component={comp} key={path} />
     ))}
-    <Route path="*" component={() => <h1>404</h1>} key="404" />
+    <Route path="/kampanj/:slug" component={DynamicLandingPage} />
+    <Route component={NotFound} />
   </Switch>
 );
