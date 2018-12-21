@@ -9,11 +9,11 @@ import * as serviceWorker from './serviceWorker';
 import './index.css';
 
 ReactDOM.render(
-  <Router>
-    <PrismicProvider>
+  <PrismicProvider>
+    <Router>
       <App />
-    </PrismicProvider>
-  </Router>,
+    </Router>
+  </PrismicProvider>,
   document.getElementById('root')
 );
 

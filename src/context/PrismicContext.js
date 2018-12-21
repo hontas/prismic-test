@@ -17,7 +17,8 @@ export class PrismicProvider extends React.Component {
   state = {
     languages: [],
     locale: 'sv-se',
-    document: {}
+    document: {},
+    isLoading: false
   };
 
   setLocale = (locale) => {
@@ -28,9 +29,11 @@ export class PrismicProvider extends React.Component {
   fetchPageForPath = (path) =>
     this.fetchPageByUID(toUID(path), this.state.locale);
 
-  fetchPageByUID = (pageUID, locale = this.state.locale) =>
-    api.getPageByUID(pageUID, locale).then((doc) => {
+  fetchPageByUID = (pageUID, locale = this.state.locale) => {
+    this.setState({ isLoading: true });
+    return api.getPageByUID(pageUID, locale).then((doc) => {
       this.setState({
+        isLoading: false,
         languages: [
           doc.lang,
           ...doc.alternate_languages.map(({ lang }) => lang)
@@ -42,6 +45,7 @@ export class PrismicProvider extends React.Component {
         }
       });
     });
+  };
 
   render() {
     return (
