@@ -32,15 +32,20 @@ export default ({ match }) => {
           />
         )}
         <h3>Dynamiska sidor</h3>
-        Publicerad:
-        <Link to="kampanj/loans-with-market-leading-interest">
+        Publicerad (master):
+        <Link to="/kampanj/loans-with-market-leading-interest">
           kampanj/loans-with-market-leading-interest
         </Link>
         <br />
-        EJ publicerad:
-        <Link to="kampanj/lan-med-marknadsledande-ranta">
+        Ej publicerad (draft):
+        <Link to="/kampanj/lan-med-marknadsledande-ranta">
           kampanj/lan-med-marknadsledande-ranta
         </Link>
+        <p>
+          Det opublicerade ligger i en release - tyvärr. Hade varit bättre att
+          ha tillgång till allt opublicerat data utan att behöva sätta upp
+          previews hos prismic
+        </p>
       </>
     </main>
   );
