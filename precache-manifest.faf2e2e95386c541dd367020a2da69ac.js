@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c9d1533b89e8ded26b9b",
+    "revision": "e0a1c9806a519e6f54a2",
     "url": "https://hontas.github.io/prismic-test/static/css/main.856c3864.chunk.css"
   },
   {
-    "revision": "c9d1533b89e8ded26b9b",
-    "url": "https://hontas.github.io/prismic-test/static/js/main.c9d1533b.chunk.js"
+    "revision": "e0a1c9806a519e6f54a2",
+    "url": "https://hontas.github.io/prismic-test/static/js/main.e0a1c980.chunk.js"
   },
   {
     "revision": "48e4e8839e36aa72918d",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "https://hontas.github.io/prismic-test/static/js/runtime~main.50d8e6c6.js"
   },
   {
-    "revision": "9f78257370e4be5af7544aae1008e38e",
+    "revision": "b01b0d23cf344d4a1cb96970a9eb7ee3",
     "url": "https://hontas.github.io/prismic-test/index.html"
   }
 ];

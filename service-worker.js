@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "https://hontas.github.io/prismic-test/precache-manifest.cc8fe0b0fb37099d2ee19a236e98faee.js"
+  "https://hontas.github.io/prismic-test/precache-manifest.faf2e2e95386c541dd367020a2da69ac.js"
 );
 
 workbox.clientsClaim();
