@@ -1,6 +1,5 @@
 {
   "name": "prismic",
-  "homepage": "https://hontas.github.io/prismic-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "PUBLIC_URL=https://hontas.github.io/prismic-test npm run build",
     "deploy": "gh-pages -d build"
   },
   "browserslist": [

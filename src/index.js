@@ -8,9 +8,15 @@ import * as serviceWorker from './serviceWorker';
 
 import './index.css';
 
+// make build work locally and on github pages
+let basename = '';
+if (process.env.PUBLIC_URL) {
+  basename = new URL(process.env.PUBLIC_URL).pathname;
+}
+
 ReactDOM.render(
   <PrismicProvider>
-    <Router>
+    <Router basename={basename}>
       <App />
     </Router>
   </PrismicProvider>,
