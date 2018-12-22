@@ -1,13 +1,13 @@
 {
-  "main.css": "/prismic-test/static/css/main.856c3864.chunk.css",
-  "main.js": "/prismic-test/static/js/main.dc8fdab1.chunk.js",
-  "main.js.map": "/prismic-test/static/js/main.dc8fdab1.chunk.js.map",
-  "static/js/1.48e4e883.chunk.js": "/prismic-test/static/js/1.48e4e883.chunk.js",
-  "static/js/1.48e4e883.chunk.js.map": "/prismic-test/static/js/1.48e4e883.chunk.js.map",
-  "runtime~main.js": "/prismic-test/static/js/runtime~main.efbb868e.js",
-  "runtime~main.js.map": "/prismic-test/static/js/runtime~main.efbb868e.js.map",
-  "static/css/main.856c3864.chunk.css.map": "/prismic-test/static/css/main.856c3864.chunk.css.map",
-  "index.html": "/prismic-test/index.html",
-  "precache-manifest.95e66a6c85e2172df2daf60b6e8a8015.js": "/prismic-test/precache-manifest.95e66a6c85e2172df2daf60b6e8a8015.js",
-  "service-worker.js": "/prismic-test/service-worker.js"
+  "main.css": "https://hontas.github.io/prismic-test/static/css/main.856c3864.chunk.css",
+  "main.js": "https://hontas.github.io/prismic-test/static/js/main.c9d1533b.chunk.js",
+  "main.js.map": "https://hontas.github.io/prismic-test/static/js/main.c9d1533b.chunk.js.map",
+  "static/js/1.48e4e883.chunk.js": "https://hontas.github.io/prismic-test/static/js/1.48e4e883.chunk.js",
+  "static/js/1.48e4e883.chunk.js.map": "https://hontas.github.io/prismic-test/static/js/1.48e4e883.chunk.js.map",
+  "runtime~main.js": "https://hontas.github.io/prismic-test/static/js/runtime~main.50d8e6c6.js",
+  "runtime~main.js.map": "https://hontas.github.io/prismic-test/static/js/runtime~main.50d8e6c6.js.map",
+  "static/css/main.856c3864.chunk.css.map": "https://hontas.github.io/prismic-test/static/css/main.856c3864.chunk.css.map",
+  "index.html": "https://hontas.github.io/prismic-test/index.html",
+  "precache-manifest.cc8fe0b0fb37099d2ee19a236e98faee.js": "https://hontas.github.io/prismic-test/precache-manifest.cc8fe0b0fb37099d2ee19a236e98faee.js",
+  "service-worker.js": "https://hontas.github.io/prismic-test/service-worker.js"
 }

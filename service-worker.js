@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/prismic-test/precache-manifest.95e66a6c85e2172df2daf60b6e8a8015.js"
+  "https://hontas.github.io/prismic-test/precache-manifest.cc8fe0b0fb37099d2ee19a236e98faee.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/prismic-test/index.html", {
+workbox.routing.registerNavigationRoute("https://hontas.github.io/prismic-test/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
