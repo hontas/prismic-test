@@ -10,7 +10,10 @@ const defaultLocale = 'sv-se';
 
 async function getByID(id) {
   const prismApi = await prism;
-  return prismApi.getByID(id, { ref });
+  const doc = await prismApi.getByID(id, { ref });
+  if (doc) return doc;
+  console.log(`Could not get document using id: ${id} and ref: ${ref}`);
+  return undefined;
 }
 
 function getByUID(name, type = 'page', locale = defaultLocale) {
@@ -54,17 +57,19 @@ async function queryPrismic({ cacheId, query, options = {} }) {
 
 async function resolvePageContent(doc = {}) {
   if (doc.data && Array.isArray(doc.data.content)) {
-    const contentPromises = doc.data.content.map((content) => {
+    const contentPromises = doc.data.content.map(async (content) => {
       if (!content.content_link) return content;
-      return getByID(content.content_link.id).then((linkedContent) => ({
+      const linkedContent = await getByID(content.content_link.id);
+      if (!linkedContent) return null;
+      return {
         ...linkedContent.data,
         prismicType: linkedContent.type,
         id: linkedContent.id
-      }));
+      };
     });
 
     const resolvedContent = await Promise.all(contentPromises);
-    doc.data.content = resolvedContent;
+    doc.data.content = resolvedContent.filter(Boolean); // filter out unresolved
   }
   return doc;
 }
